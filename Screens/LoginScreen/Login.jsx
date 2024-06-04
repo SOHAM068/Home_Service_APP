@@ -34,7 +34,7 @@ const Login = () => {
         </Text>
         <Text style={{color:'white', textAlign:'center', marginTop:20}}>Best App to find services near you which deliver you a professional service</Text>
         <TouchableOpacity style={styles.Button} onPress={onPress}>
-          <Text style={{color:Colors.Primary, fontWeight:'bold', textAlign:'center', fontSize:15}}>Get Started</Text>
+          <Text style={{color:Colors.Primary, fontWeight:'bold', textAlign:'center', fontSize:15}}>Let's Get Started</Text>
         </TouchableOpacity>
       </View>
     </View>

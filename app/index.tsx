@@ -4,6 +4,11 @@ import Login from "../Screens/LoginScreen/Login";
 import { StatusBar } from "expo-status-bar";
 import { Clerk, ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
+import { NavigationContainer } from "@react-navigation/native";
+import TabNavigation from "../Navigation/TabNavigation";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const tokenCache = {
   async getToken(key: string) {
@@ -32,7 +37,7 @@ export default function Index() {
         <View style={styles.container}>
           {/* SignIn */}
           <SignedIn>
-            <Text>You are Signed in</Text>
+              <TabNavigation />
           </SignedIn>
           {/* SignOut */}
           <SignedOut>
