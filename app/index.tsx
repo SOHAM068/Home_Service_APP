@@ -7,6 +7,7 @@ import * as SecureStore from "expo-secure-store";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "../Navigation/TabNavigation";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useFonts } from 'expo-font';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,11 @@ const tokenCache = {
 };
 
 export default function Index() {
+  const [fontsLoaded] = useFonts({
+    'outfit': require('../assets/fonts/Outfit-Regular.ttf'),
+    'outfit-Bold': require('../assets/fonts/Outfit-Bold.ttf'),
+    'outfit-Medium': require('../assets/fonts/Outfit-Medium.ttf'),
+  });
   return (
     <>
       <ClerkProvider tokenCache={tokenCache} publishableKey="pk_test_ZGVjaWRpbmctc2hhZC05LmNsZXJrLmFjY291bnRzLmRldiQ">
