@@ -25,6 +25,7 @@ export const Colors = {
   },
   Black: '#000000',
   White: '#ffffff',
-  Primary: '#8E3FFF'
+  Primary: '#8E3FFF',
+  Light_Gray: '#EDEDED'
 };
 export default Colors;
