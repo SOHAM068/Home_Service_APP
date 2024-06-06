@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 import React from "react";
 import Login from "../Screens/LoginScreen/Login";
-import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "react-native";
 import { Clerk, ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
 import { NavigationContainer } from "@react-navigation/native";
@@ -38,7 +38,7 @@ export default function Index() {
     <>
       <ClerkProvider tokenCache={tokenCache} publishableKey="pk_test_ZGVjaWRpbmctc2hhZC05LmNsZXJrLmFjY291bnRzLmRldiQ">
         <View>
-          <StatusBar style="dark" backgroundColor="#D2D2D2" />
+          <StatusBar barStyle={'dark-content'} backgroundColor="#D2D2D2" />
         </View>
         <View style={styles.container}>
           {/* SignIn */}

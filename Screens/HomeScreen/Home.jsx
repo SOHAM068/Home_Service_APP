@@ -1,18 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
 import Header from './Header'
 import Slider from './Slider'
 import Category from './Category'
+import Business from './Business'
 
 export default function Home() {
   return (
-    <View>
-      <Header />
-      <View style={{padding: 20}}>
-        <Slider />
-        <Category />
-      </View>
-    </View>
+    <>
+        <ScrollView>
+          <Header />
+          <View style={{padding: 20}}>
+            <Slider />
+            <Category />
+            <Business />
+          </View>
+      </ScrollView>
+    </>
   )
 }
 
