@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
         padding: 20,
-        paddingTop: 43,
     },
     profileMainContainer:{
         display: 'flex',

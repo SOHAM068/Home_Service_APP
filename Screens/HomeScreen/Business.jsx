@@ -23,7 +23,7 @@ export default function Business() {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.Heading}>Popular Business</Text>
+        <Text style={styles.Heading}>Popular Services</Text>
         <Text style={{ fontFamily: 'outfit-Medium', color: Colors.Primary, marginTop: 6 }}>View All</Text>
       </View>
       <View>
@@ -31,7 +31,7 @@ export default function Business() {
           data={businessList}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => index <= 3 && (
+          renderItem={({ item, index }) => (
             <View>
               <View style={styles.imageContainer}>
                 <Image source={{ uri: item?.image[0] }} style={styles.image} />
@@ -56,7 +56,9 @@ const styles = StyleSheet.create({
     fontFamily: 'outfit-Bold',
   },
   infoContainer:{
-    padding:7,
+    paddingTop:7,
+    paddingRight:7,
+    paddingLeft:7,
     display:'flex',
     gap:3
   },
@@ -71,10 +73,12 @@ const styles = StyleSheet.create({
     width: 160,
     height: 100,
     borderRadius: 10,
+    borderTopRightRadius: -10
   },
   imageContainer: {
     padding: 10,
     backgroundColor: Colors.White,
     borderRadius: 10,
+    marginRight: 10,
   }
 })

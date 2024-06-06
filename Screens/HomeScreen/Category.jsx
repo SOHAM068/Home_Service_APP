@@ -1,12 +1,15 @@
-import { StyleSheet, Text, View, Image} from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView} from 'react-native'
 import React,{useState, useEffect} from 'react'
 import Colors from '@/constants/Colors'
 import { db } from '../../constants/FirebaseConfig'
 import { collection, query, getDocs } from 'firebase/firestore';
 import { FlatList } from 'react-native';
+import { useRouter } from 'expo-router';
+import CategorySlider from './CategorySlider';
 
 export default function Category() {
     const [categoryList, setCategoryList] = useState([]);
+    const router = useRouter();
   useEffect(() => {
     GetCategoryList();
   },[])
@@ -21,27 +24,27 @@ export default function Category() {
     });
   }
   return (
+    <>
     <View>
         <View style={styles.container}>
             <Text style={styles.Heading}>Categories</Text>
             <Text style={{fontFamily:'outfit-Medium', color:Colors.Primary, marginTop:6}}>View All</Text>
         </View>
-        <View>
+        <SafeAreaView >
             <FlatList 
                 data={categoryList}
                 numColumns={4}
                 renderItem={({item, index}) =>index<=3&&(
-                    <View style={styles.categoryListContainer}>
-                        <View style={styles.Itemcontainer}>
-                            <Image source={{uri:item?.icon}} style={styles.Icons}/>
-                        </View>
-                        <Text style={{fontFamily:'outfit-Medium', marginTop:4, fontSize:13}}>{item?.name}</Text>
-                    </View>
+                    <CategorySlider 
+                    category={item}
+                    key={index}
+                    onCategoryPress={(category) => router.push('/businessByCategory/'+item.name)}
+                    />
                 )}
             />
-        </View>
-        
+        </SafeAreaView>  
     </View>
+    </>
   )
 }
 
