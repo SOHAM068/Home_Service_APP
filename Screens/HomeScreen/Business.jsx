@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     gap:3
   },
   container: {
+    flex:1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     display: 'flex',

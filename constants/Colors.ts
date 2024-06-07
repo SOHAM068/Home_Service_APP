@@ -29,5 +29,6 @@ export const Colors = {
   Light_Gray: '#EDEDED',
   PRIMARY_LIGHT: '#DDD7FF',
   PRIMARY_DARK: '#8E3FFF',
+  Gray: '#9B9B9B',
 };
 export default Colors;

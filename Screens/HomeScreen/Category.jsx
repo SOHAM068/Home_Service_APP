@@ -34,6 +34,7 @@ export default function Category() {
             <FlatList 
                 data={categoryList}
                 numColumns={4}
+                Horizontal={false}
                 renderItem={({item, index}) =>index<=3&&(
                     <CategorySlider 
                     category={item}
