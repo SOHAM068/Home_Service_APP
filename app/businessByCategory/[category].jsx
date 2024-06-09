@@ -1,6 +1,6 @@
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { useNavigation, useLocalSearchParams } from 'expo-router';
+import React, { useLayoutEffect, useState } from 'react'
+import { useNavigation, useLocalSearchParams, useRouter } from 'expo-router';
 import { db } from '../../constants/FirebaseConfig'
 import { collection, query, getDocs } from 'firebase/firestore';
 import { where } from 'firebase/firestore';
@@ -8,13 +8,14 @@ import Colors from '@/constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function BusinessListByCategory() {
+  const router = useRouter(); //To push to ListedCategories to the Details Screen
   const navigation = useNavigation();
   const { category } = useLocalSearchParams();
   const [businessList, setBusinessList] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
+  useLayoutEffect(() => {
     navigation.setOptions({
-      headershown: true,
+      headershown: false,
       headerTitle: category
     })
     GetBusinessList();
@@ -41,7 +42,7 @@ export default function BusinessListByCategory() {
           refreshing={loading}
           renderItem={({ item, index }) => (
             <TouchableOpacity 
-            onPress={() => {}}
+            onPress={() => router.push('/businessDetails/'+item.id)}
             style={styles.container}>
               <Image source={{ uri: item?.image[2] }} style={{ width: 100, height: 100, borderRadius: 15 }} />
               <View style={styles.subContainer}>
