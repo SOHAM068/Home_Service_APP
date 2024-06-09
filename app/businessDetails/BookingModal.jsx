@@ -86,6 +86,15 @@ export default function BookingModal({ hideModal }) {
                             multiline={true}
                         />
                     </View>
+
+                    {/* Confirm&Book Button */}
+                    <TouchableOpacity style={{ backgroundColor: Colors.Primary, padding: 10, borderRadius: 10, marginTop: 10 }}>
+                        <Text style={{
+                            fontSize: 18, fontFamily: 'outfit-Bold', color: 'white', textAlign: 'center', 
+                            elevation: 5,
+                        }}>Confirm & Book</Text>
+                    </TouchableOpacity>
+
                 </ScrollView>
 
             </KeyboardAvoidingView>
@@ -108,7 +117,7 @@ const styles = StyleSheet.create({
         borderRadius: 99,
         paddingHorizontal: 15,
     },
-    textInputStyle:{
-        borderWidth: 1, borderColor: Colors.PRIMARY_LIGHT, padding: 10, borderRadius: 10, padding: 10, height: 100, textAlignVertical: 'top' 
+    textInputStyle: {
+        borderWidth: 1, borderColor: Colors.PRIMARY_LIGHT, padding: 10, borderRadius: 10, padding: 10, height: 100, textAlignVertical: 'top'
     }
 })
