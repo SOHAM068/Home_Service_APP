@@ -8,6 +8,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "../Navigation/TabNavigation";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
+import BusinessDetails from "./businessDetails/[businessid]"
+import Home from "@/Screens/HomeScreen/Home";
+import _layout from "./_layout";
+import Intro from "./businessDetails/Intro";
 
 const Stack = createNativeStackNavigator();
 
@@ -37,19 +41,22 @@ export default function Index() {
   return (
     <>
       <ClerkProvider tokenCache={tokenCache} publishableKey="pk_test_ZGVjaWRpbmctc2hhZC05LmNsZXJrLmFjY291bnRzLmRldiQ">
+
         <View>
           <StatusBar barStyle={'dark-content'} backgroundColor="#D2D2D2" />
         </View>
         <View style={styles.container}>
           {/* SignIn */}
           <SignedIn>
-              <TabNavigation />
+            <TabNavigation />
+            
           </SignedIn>
           {/* SignOut */}
           <SignedOut>
             <Login />
           </SignedOut>
         </View>
+        
       </ClerkProvider>
     </>
   );

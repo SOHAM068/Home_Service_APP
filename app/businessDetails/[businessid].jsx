@@ -8,6 +8,7 @@ import Colors from '@/constants/Colors';
 import Intro from './Intro';
 import { FontAwesome6 } from '@expo/vector-icons';
 import BusinessPhotos from './BusinessPhotos';
+import { get } from 'firebase/database';
 
 
 
@@ -91,4 +92,4 @@ const styles = StyleSheet.create({
         fontFamily: 'outfit-Medium',
         color: 'black'
     }
-})
+});

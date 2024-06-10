@@ -9,7 +9,7 @@ import { ScrollView } from 'react-native-virtualized-view'
 
 export default function Intro({ business }) {
   const [readMore, setReadMore] = useState(false);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   return (
     <View>
       <ScrollView style={{height:'90%'}}>
