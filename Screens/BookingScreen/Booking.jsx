@@ -32,7 +32,7 @@ export default function Booking() {
         data={showbooking}
         renderItem={({item, index}) => (
           <View>
-            <View style={{padding:10, margin:10, backgroundColor:Colors.Primary, borderRadius:10}}>
+            <View style={{padding:10, margin:19, backgroundColor:Colors.Primary, borderRadius:10}}>
               <Text style={{color:'white', fontFamily:'outfit-Bold', fontSize:20}}>{item?.name}</Text>
               <Text style={{color:'white', fontFamily:'outfit', fontSize:16}}>{item?.email}</Text>
               <Text style={{color:'white', fontFamily:'outfit', fontSize:16}}>{item?.phone}</Text>
